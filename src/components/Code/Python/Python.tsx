@@ -1,5 +1,6 @@
 import * as React from 'react';
 import CodeEditor from '@uiw/react-textarea-code-editor'
+import { Box } from '@mui/material';
 import styles from './Python.module.scss'
 import cn from 'classnames'
 
@@ -12,7 +13,7 @@ export const Python = () => {
     )
 
     return (
-        <div className={cn(styles.python)}>
+        <Box sx = {{ height: '70vh', overflow: 'auto', mx: '10%', my: '5%' }}>
             <CodeEditor
                 value={code}
                 language='python'
@@ -27,6 +28,6 @@ export const Python = () => {
                     fontFamily: 'ui-monospace,SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace'
                 }}
             />
-        </div>
+        </Box>
     )
 }

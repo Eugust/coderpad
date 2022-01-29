@@ -43,7 +43,13 @@ export const OutputWidget: React.FC<props> = ({ status, setStatus, result }) => 
                         </Toolbar>
                     </AppBar>
                 </ThemeProvider>
-                <ProgramOutput result={result}/>
+                <Box
+                    sx = {{
+                        overflow: 'auto'
+                    }}
+                >
+                    <ProgramOutput result={result}/>
+                </Box>
             </div>
         )
     } else {

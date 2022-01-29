@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from '@mui/material';
+import { Grid, Container } from '@mui/material';
 import Splitter from 'm-react-splitters';
 import 'm-react-splitters/lib/splitters.css';
 
@@ -20,20 +20,43 @@ function App() {
 
   return (
     <div className="App">
-      <Grid container sx={{ bgcolor: "text.primary", height: 700 }}>
-        <Splitter
-          position="vertical"
-          primaryPaneMaxWidth="80%"
-          primaryPaneMinWidth="20%"
-          primaryPaneWidth="900px"
-          dispatchResize={true}
+      <Grid
+        container
+        direction="column"
+        alignItems="stretch"
+        sx = {{
+          height: '100vh',
+          display: 'flex',
+          flexDirection: 'column'
+        }}
+      >
+        <Grid
+          item
+          sx={{
+            bgcolor: "text.primary",
+            height: '100%',
+            maxHeight: '100%',
+            flex: 1,
+          }}
+          xs
         >
-          <CodeWidget tool={tool} setTool={setTool} setResult={setResult}/>
-          <OutputWidget status={status} setStatus={setStatus} result={result}/>
-        </Splitter>
-      </Grid>
-      <Grid container sx={{ bgcolor: "text.secondary", height: 53 }}>
-        <EnterName name={name} setName={setName} />
+          <Splitter
+            position="vertical"
+            primaryPaneMaxWidth="80%"
+            primaryPaneMinWidth="20%"
+            primaryPaneWidth="900px"
+            dispatchResize={true}
+          >
+            <CodeWidget tool={tool} setTool={setTool} setResult={setResult}/>
+            <OutputWidget status={status} setStatus={setStatus} result={result}/>
+          </Splitter>
+        </Grid>
+        <Grid
+          item
+          sx={{ bgcolor: "text.secondary", height: '7%', maxHeight: '10%' }}
+        >
+          <EnterName name={name} setName={setName} />
+        </Grid>
       </Grid>
     </div>
   );

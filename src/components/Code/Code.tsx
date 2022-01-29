@@ -49,7 +49,7 @@ export const CodeWidget: React.FC<props> = ({tool, setTool, setResult}) => {
 
     if (tool == 'Python') {
         return (
-            <div>
+            <Box>
                 <ThemeProvider theme={darkTheme}>
                     <AppBar position='static'>
                         <Toolbar>
@@ -80,10 +80,8 @@ export const CodeWidget: React.FC<props> = ({tool, setTool, setResult}) => {
                         </Toolbar>
                     </AppBar>
                 </ThemeProvider>
-                <Box>
-                    <Python />
-                </Box>
-              </div>
+                <Python />
+            </Box>
         )
     } else if (tool == 'C++') {
         return (
