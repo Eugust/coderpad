@@ -42,8 +42,8 @@ function App() {
         >
           <Splitter
             position="vertical"
-            primaryPaneMaxWidth="80%"
-            primaryPaneMinWidth="20%"
+            primaryPaneMaxWidth="69%"
+            primaryPaneMinWidth="40%"
             primaryPaneWidth="900px"
             dispatchResize={true}
           >
@@ -53,7 +53,13 @@ function App() {
         </Grid>
         <Grid
           item
-          sx={{ bgcolor: "text.secondary", height: '7%', maxHeight: '10%' }}
+          sx={{
+            bgcolor: "text.primary",
+            height: '7%',
+            maxHeight: '10%',
+            borderTop: 1,
+            borderColor: '#ffffff',
+          }}
         >
           <EnterName name={name} setName={setName} />
         </Grid>
