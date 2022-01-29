@@ -13,7 +13,14 @@ export const Python = () => {
     )
 
     return (
-        <Box sx = {{ height: '70vh', overflow: 'auto', mx: '10%', my: '5%' }}>
+        <Box
+            sx = {{
+                height: '70vh',
+                overflow: 'auto',
+                mx: '10%',
+                my: '5%',
+            }}
+        >
             <CodeEditor
                 value={code}
                 language='python'
@@ -23,9 +30,10 @@ export const Python = () => {
                 }}
                 padding={15}
                 style = {{
-                    fontSize: 12,
-                    backgroundColor: "#f5f5f5",
-                    fontFamily: 'ui-monospace,SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace'
+                    fontSize: 14,
+                    backgroundColor: "#2b2a2a",
+                    fontFamily: 'ui-monospace,SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace',
+                    color: 'white'
                 }}
             />
         </Box>

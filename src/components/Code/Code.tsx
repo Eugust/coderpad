@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { AppBar, Button, Box, Toolbar, TextField, InputLabel, FormControl, Grid } from '@mui/material';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import { AppBar, Button, Box, Toolbar, InputLabel, FormControl, Grid, Typography } from '@mui/material';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Python } from './Python/Python';
@@ -51,7 +52,7 @@ export const CodeWidget: React.FC<props> = ({tool, setTool, setResult}) => {
         return (
             <Box>
                 <ThemeProvider theme={darkTheme}>
-                    <AppBar position='static'>
+                    <AppBar position='static' sx = {{ height: '4.5rem', justifyContent: 'center' }}>
                         <Toolbar>
                             <Grid item xs={10}>
                                 <Button
@@ -60,6 +61,7 @@ export const CodeWidget: React.FC<props> = ({tool, setTool, setResult}) => {
                                     onClick={handleCheck}
                                 >
                                     Run
+                                    <PlayArrowIcon />
                                 </Button>
                             </Grid>
                             <Grid item xs={0}>
@@ -87,7 +89,7 @@ export const CodeWidget: React.FC<props> = ({tool, setTool, setResult}) => {
         return (
             <div>
                 <ThemeProvider theme={darkTheme}>
-                    <AppBar position='static'>
+                    <AppBar position='static' sx = {{ height: '4.5rem', justifyContent: 'center' }}>
                         <Toolbar>
                             <Grid item xs={10}>
                                 <Button
@@ -96,6 +98,7 @@ export const CodeWidget: React.FC<props> = ({tool, setTool, setResult}) => {
                                     onClick={handleCheck}
                                 >
                                     Run
+                                    <PlayArrowIcon />
                                 </Button>
                             </Grid>
                             <Grid item xs={0}>
@@ -125,7 +128,7 @@ export const CodeWidget: React.FC<props> = ({tool, setTool, setResult}) => {
         return (
             <div>
                 <ThemeProvider theme={darkTheme}>
-                    <AppBar position='static'>
+                    <AppBar position='static' sx = {{ height: '4.5rem', justifyContent: 'center' }}>
                         <Toolbar>
                             <Grid item xs={10}>
                                 <Button
@@ -134,6 +137,7 @@ export const CodeWidget: React.FC<props> = ({tool, setTool, setResult}) => {
                                     onClick={handleCheck}
                                 >
                                     Run
+                                    <PlayArrowIcon />
                                 </Button>
                             </Grid>
                             <Grid item xs={0}>
@@ -163,7 +167,7 @@ export const CodeWidget: React.FC<props> = ({tool, setTool, setResult}) => {
         return (
             <div>
                 <ThemeProvider theme={darkTheme}>
-                    <AppBar position='static'>
+                    <AppBar position='static' sx = {{ height: '4.5rem', justifyContent: 'center' }}>
                         <Toolbar>
                             <Grid item xs={10}>
                                 <Button
@@ -172,6 +176,7 @@ export const CodeWidget: React.FC<props> = ({tool, setTool, setResult}) => {
                                     onClick={handleCheck}
                                 >
                                     Run
+                                    <PlayArrowIcon />
                                 </Button>
                             </Grid>
                             <Grid item xs={0}>
@@ -201,11 +206,16 @@ export const CodeWidget: React.FC<props> = ({tool, setTool, setResult}) => {
         return (
             <div>
                 <ThemeProvider theme={darkTheme}>
-                    <AppBar position='static'>
+                    <AppBar position='static' sx = {{ height: '4.5rem', justifyContent: 'center' }}>
                         <Toolbar>
                             <Grid item xs={10}>
-                                <Button variant="contained" color="success">
+                                <Button
+                                    variant="contained"
+                                    color="success"
+                                    onClick={handleCheck}
+                                >
                                     Run
+                                    <PlayArrowIcon />
                                 </Button>
                             </Grid>
                             <Grid item xs={0}>
@@ -226,8 +236,19 @@ export const CodeWidget: React.FC<props> = ({tool, setTool, setResult}) => {
                         </Toolbar>
                     </AppBar>
                 </ThemeProvider>
-                <Box>
-                    <h2>Здесь ваш код</h2>
+                <Box
+                    sx = {{
+                        m: '5%',
+                        p: '5%',
+                    }}
+                >
+                    <Typography
+                        sx = {{
+                            color: '#fafafa'
+                        }}
+                    >
+                        Choose tool and type code here
+                    </Typography>
                 </Box>
             </div>
         )

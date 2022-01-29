@@ -18,6 +18,8 @@ function App() {
   const [tool, setTool] = React.useState<string>('')
   const [result, setResult] = React.useState<string>('')
 
+  console.log(tool)
+
   return (
     <div className="App">
       <Grid
