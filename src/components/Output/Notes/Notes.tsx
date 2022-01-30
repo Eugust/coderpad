@@ -2,12 +2,12 @@ import * as React from 'react';
 import { TextField, Box } from '@mui/material';
 import { boxSx, outputSx } from './NotesStyles';
 
-import { getSessionStorageOrDefault } from '../../Func';
+import { getLocalStorageOrDefault } from '../../Func';
 
 
 export const Notes = () => {
     const [notes, setNotes] = React.useState(
-        getSessionStorageOrDefault("Notes", '')
+        getLocalStorageOrDefault("Notes", '')
     );
     const inputRef = React.useRef<HTMLInputElement>(null);
 

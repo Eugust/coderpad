@@ -1,24 +1,24 @@
 import * as React from 'react';
 import CodeEditor from '@uiw/react-textarea-code-editor'
 import { Box } from '@mui/material';
-import { codeBoxSx } from './ToolStyles';
+import { codeBoxSx } from '../ToolStyles';
 
-import { getSessionStorageOrDefault } from '../Func';
+import { getLocalStorageOrDefault } from '../../Func';
 
 
-export const Js = () => {
+export const C = () => {
     const [code, setCode] = React.useState(
-        getSessionStorageOrDefault('JavaScript', '')
+        getLocalStorageOrDefault('C++', '')
     )
 
     return (
         <Box sx = {codeBoxSx}>
             <CodeEditor
                 value={code}
-                language='js'
+                language='cpp'
                 onChange={(e) => {
                     setCode(e.target.value)
-                    localStorage.setItem("JavaScript", e.target.value)
+                    localStorage.setItem("C++", e.target.value)
                 }}
                 padding={15}
                 style = {{

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import CodeEditor from '@uiw/react-textarea-code-editor'
 import { Box } from '@mui/material';
-import { codeBoxSx } from './ToolStyles';
+import { codeBoxSx } from '../ToolStyles';
 
-import { getSessionStorageOrDefault } from '../Func';
+import { getLocalStorageOrDefault } from '../../Func';
 
 
 const commitEvent = (commit: string | undefined, code: string) => {
@@ -20,7 +20,7 @@ const commitEvent = (commit: string | undefined, code: string) => {
 
 export const Python = () => {
     const [code, setCode] = React.useState(
-        getSessionStorageOrDefault('Python', '')
+        getLocalStorageOrDefault('Python', '')
     )
 
     const handleKeybordEvent = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {

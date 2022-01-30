@@ -2,17 +2,18 @@ import * as React from 'react';
 import { makeStyles } from '@mui/styles';
 
 
-export const useStyles = makeStyles({
+export const useStyles = makeStyles(() => ({
     mainGrid: {
         direction: "ltr",
+        height: '100vh',
         alignItems: "stretch",
     }
-});
+}));
 
 export const mainGridSx = {
-    height: '100vh',
     display: 'flex',
     flexDirection: 'column'
+
 } as const;
 
 export const workGridSx = {
