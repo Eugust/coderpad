@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TextField } from '@mui/material';
+import { TextField, Box } from '@mui/material';
 import styles from './Notes.module.scss'
 import cn from 'classnames'
 
@@ -21,7 +21,14 @@ export const Notes = () => {
     console.log(localStorage.getItem("Notes"))
 
     return (
-        <div className={cn(styles.notes)}>
+        <Box
+            sx = {{
+                m: '1%',
+                p: '1%',
+                height: '70vh',
+                overflow: 'auto',
+            }}
+        >
             <form
                 onSubmit={(e) => {
                     inputRef.current?.blur();
@@ -34,6 +41,6 @@ export const Notes = () => {
                     multiline
                 />
             </form>
-        </div>
+        </Box>
     )
 }

@@ -56,7 +56,7 @@ export const OutputWidget: React.FC<props> = ({ status, setStatus, result }) => 
         return (
             <div>
                 <ThemeProvider theme={darkTheme}>
-                    <AppBar position='static'>
+                    <AppBar position='static' sx = {{ height: '4.5rem', justifyContent: 'center' }}>
                         <Toolbar>
                             <Button
                                 color="secondary"

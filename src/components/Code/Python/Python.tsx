@@ -7,10 +7,29 @@ import cn from 'classnames'
 import { getSessionStorageOrDefault } from '../../Func';
 
 
+const commitEvent = (commit: string | undefined, code: string) => {
+    if (commit) {
+        if (commit.startsWith(`'''`) && commit.endsWith(`'''`)) {
+            let newCommit = (commit.replace(`'''`, ``)).replace(`'''`, ``)
+            return code.replace(commit, newCommit)
+        }
+        return code.replace(commit, `'''${commit}'''`)
+    }
+    return code
+}
+
+
 export const Python = () => {
     const [code, setCode] = React.useState(
         getSessionStorageOrDefault('Python', '')
     )
+
+    const handleKeybordEvent = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+        if (e.ctrlKey && e.key == 'k') {
+            e.preventDefault();
+            setCode(commitEvent(window.getSelection()?.toString(), code));
+        }
+    }
 
     return (
         <Box
@@ -28,6 +47,7 @@ export const Python = () => {
                     setCode(e.target.value)
                     localStorage.setItem("Python", e.target.value)
                 }}
+                onKeyDown={handleKeybordEvent}
                 padding={15}
                 style = {{
                     fontSize: 14,

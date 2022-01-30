@@ -44,7 +44,7 @@ function App() {
         >
           <Splitter
             position="vertical"
-            primaryPaneMaxWidth="69%"
+            primaryPaneMaxWidth="60%"
             primaryPaneMinWidth="40%"
             primaryPaneWidth="900px"
             dispatchResize={true}
