@@ -42,7 +42,7 @@ export const Python = () => {
                 onKeyDown={handleKeybordEvent}
                 padding={15}
                 style = {{
-                    fontSize: 14,
+                    fontSize: 15,
                     backgroundColor: "#2b2a2a",
                     fontFamily: 'ui-monospace,SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace',
                     color: 'white'

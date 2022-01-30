@@ -22,7 +22,9 @@ export const outputBox = {
 } as const;
 
 export const nameStyle = {
-    color: '#fafafa'
+    color: '#fafafa',
+    fontFamily: 'Roboto',
+    letterSpacing: '0.1rem'
 } as const;
 
 export const circle = {
@@ -33,5 +35,6 @@ export const circle = {
     width: '1rem',
     height: '1rem',
     m: 0.3,
-    ml: 1
+    ml: 1,
+    mt: 0.4
 } as const;

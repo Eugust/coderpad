@@ -25,6 +25,8 @@ export const Notes = () => {
                     onChange={onChange}
                     fullWidth
                     multiline
+                    margin='normal'
+                    placeholder='To uncomment highlight the comment along with hash marks'
                 />
             </form>
         </Box>

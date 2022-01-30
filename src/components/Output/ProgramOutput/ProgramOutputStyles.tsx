@@ -3,10 +3,14 @@ import { makeStyles } from '@mui/styles';
 
 
 export const boxSx = {
-    m: '5%',
-    p: '5%',
+    m: '2%',
+    p: '2%',
+    ml: '5%'
 } as const;
 
 export const outputSx = {
-    color: '#fafafa'
+    color: '#fafafa',
+    fontSize: '1.7rem',
+    fontFamily: 'Roboto',
+    letterSpacing: '0.1rem'
 } as const;

@@ -21,9 +21,16 @@ export const CodeWidget: React.FC<props> = ({tool}) => {
             return <Js />
         default:
             return (
-                <Box sx = {{ m: '5%', p: '5%',}}>
-                    <Typography sx = {{ color: '#fafafa' }}>
-                        Choose tool and type code here
+                <Box sx = {{ m: '1%', p: '1%',}}>
+                    <Typography
+                        sx = {{
+                            color: '#2196f3',
+                            fontSize: '1.7rem',
+                            fontFamily: 'Roboto',
+                            letterSpacing: '0.1rem'
+                        }}
+                    >
+                        Choose tool and type code here:
                     </Typography>
                 </Box>
             )

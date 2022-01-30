@@ -10,5 +10,5 @@ export const boxSx = {
 } as const;
 
 export const outputSx = {
-    color: '#fafafa'
+    bgcolor: '#bdbdbd',
 }as const;

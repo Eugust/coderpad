@@ -31,9 +31,9 @@ const Check = (code: string | null) => {
     if (code) {
         let codeSize = new Blob([code]).size
         if (codeSize <= 1024) {
-            return "Ok"
+            return "Passed"
         }
-        return "Error: too big code"
+        return "Too big code!"
     }
     return "Please, input your code"
 }
