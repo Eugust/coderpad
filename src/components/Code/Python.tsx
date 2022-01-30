@@ -1,10 +1,9 @@
 import * as React from 'react';
 import CodeEditor from '@uiw/react-textarea-code-editor'
 import { Box } from '@mui/material';
-import styles from './Python.module.scss'
-import cn from 'classnames'
+import { codeBoxSx } from './ToolStyles';
 
-import { getSessionStorageOrDefault } from '../../Func';
+import { getSessionStorageOrDefault } from '../Func';
 
 
 const commitEvent = (commit: string | undefined, code: string) => {
@@ -32,14 +31,7 @@ export const Python = () => {
     }
 
     return (
-        <Box
-            sx = {{
-                height: '70vh',
-                overflow: 'auto',
-                mx: '10%',
-                my: '5%',
-            }}
-        >
+        <Box sx = {codeBoxSx}>
             <CodeEditor
                 value={code}
                 language='python'

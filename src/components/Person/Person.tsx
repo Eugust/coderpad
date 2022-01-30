@@ -1,14 +1,16 @@
-import React, {useState, useEffect} from 'react';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-import Box from '@mui/material/Box';
-import styles from './Person.module.scss'
-import cn from 'classnames'
+import React, {useState} from 'react';
+import {
+    Button,
+    TextField,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogContentText,
+    DialogTitle,
+    Typography,
+    Box
+} from '@mui/material';
+import { useStyles, outputBox, nameStyle, circle } from './PersonStyle'
 
 
 interface props {
@@ -25,7 +27,9 @@ export const EnterName: React.FC<props> = ({ name, setName }) => {
         localStorage.setItem("Username", name);
     };
 
-    const stored = localStorage.getItem("Username")
+    const stored = localStorage.getItem("Username");
+
+    const classes = useStyles();
 
     if (!stored) {
         return (
@@ -37,11 +41,9 @@ export const EnterName: React.FC<props> = ({ name, setName }) => {
                             Tell me your name:
                         </DialogContentText>
                         <TextField
+                            className={classes.dialogText}
                             autoFocus
-                            margin="dense"
-                            id="name"
                             fullWidth
-                            variant="standard"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                         />
@@ -54,34 +56,11 @@ export const EnterName: React.FC<props> = ({ name, setName }) => {
         )
     } else {
         return (
-            <Box
-                sx = {{
-                    ml: '1%',
-                    mt: '0.5%',
-                    mb: '0.5%',
-                    px: '0.5%',
-                    py: '0.3%',
-                    border: 1,
-                    borderRadius: 2,
-                    bgcolor: '#424242',
-                    display: 'inline-flex',
-                }}
-            >
-                <div className={cn(styles.name)}>
+            <Box sx = {outputBox}>
+                <Typography sx = {nameStyle}>
                     {localStorage.getItem("Username")} : Online
-                </div>
-                <Box
-                    sx = {{
-                        display: 'inline-flex',
-                        border: 1,
-                        borderRadius: '50%',
-                        bgcolor: '#4caf50',
-                        width: '1rem',
-                        height: '1rem',
-                        m: 0.3,
-                        ml: 1
-                    }}
-                ></Box>
+                </Typography>
+                <Box sx = {circle} />
             </Box>
         )
     }

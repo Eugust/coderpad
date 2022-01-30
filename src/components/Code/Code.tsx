@@ -1,14 +1,24 @@
 import * as React from 'react';
-import { AppBar, Button, Box, Toolbar, InputLabel, FormControl, Grid, Typography } from '@mui/material';
+import {
+    AppBar,
+    Button,
+    Box,
+    Toolbar,
+    InputLabel,
+    FormControl,
+    Grid,
+    Typography,
+    ThemeProvider,
+    createTheme,
+    Select,
+    MenuItem
+} from '@mui/material';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { Python } from './Python/Python';
+import { Python } from './Python';
 import { CodeHeader } from './CodeHeader/CodeHeader';
-import { Js } from './JavaScript/Js';
-import { Go } from './Go/Go';
-import { C } from './C++/C';
+import { Js } from './Js';
+import { Go } from './Go';
+import { C } from './C';
 
 interface props {
     tool: string;
@@ -16,7 +26,7 @@ interface props {
     setResult: React.Dispatch<React.SetStateAction<string>>;
 }
 
-function Check(code: string | null) {
+const Check = (code: string | null) => {
     if (code) {
         let codeSize = new Blob([code]).size
         if (codeSize <= 1024) {
