@@ -1,6 +1,6 @@
 # Fakecoderpad
 Like coderpad but fake
-### Run project
+## Run project
 Clone repository
 ```
 git clone {repository}
@@ -9,7 +9,7 @@ Directory
 ```
 cd coderpad
 ```
-Use command to start
+Run command
 ```
 npx serve
 ```
