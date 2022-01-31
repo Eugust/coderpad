@@ -35,6 +35,7 @@ export const Python = () => {
             <CodeEditor
                 value={code}
                 language='python'
+                placeholder='Some code...'
                 onChange={(e) => {
                     setCode(e.target.value)
                     localStorage.setItem("Python", e.target.value)
@@ -43,7 +44,6 @@ export const Python = () => {
                 padding={15}
                 style = {{
                     fontSize: 15,
-                    backgroundColor: "#2b2a2a",
                     fontFamily: 'ui-monospace,SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace',
                     color: 'white'
                 }}

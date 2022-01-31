@@ -22,10 +22,28 @@ export const OutputHeader: React.FC<props> = ({ setStatus}) => {
             <ThemeProvider theme={darkTheme}>
                 <AppBar position='static' sx = {{ height: '4.5rem', justifyContent: 'center' }}>
                     <Toolbar>
-                        <Button color="secondary" onClick={programOutput}>
+                        <Button
+                            color="secondary"
+                            onClick={programOutput}
+                            sx = {{
+                                fontSize: {
+                                    md: '1rem',
+                                    xs: '0.6rem'
+                                }
+                            }}
+                        >
                             Program output
                         </Button>
-                        <Button color="secondary" onClick={interviewerNotes}>
+                        <Button
+                            color="secondary"
+                            onClick={interviewerNotes}
+                            sx = {{
+                                fontSize: {
+                                    md: '1rem',
+                                    xs: '0.6rem'
+                                }
+                            }}
+                        >
                             Interviewer notes
                         </Button>
                     </Toolbar>

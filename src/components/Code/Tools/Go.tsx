@@ -23,6 +23,7 @@ export const Go = () => {
             <CodeEditor
                 value={code}
                 language='go'
+                placeholder='Some code...'
                 onChange={(e) => {
                     setCode(e.target.value)
                     localStorage.setItem("Go", e.target.value)
@@ -31,7 +32,6 @@ export const Go = () => {
                 padding={15}
                 style = {{
                     fontSize: 15,
-                    backgroundColor: "#2b2a2a",
                     fontFamily: 'ui-monospace,SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace',
                     color: 'white'
                 }}

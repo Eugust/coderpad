@@ -21,11 +21,14 @@ export const CodeWidget: React.FC<props> = ({tool}) => {
             return <Js />
         default:
             return (
-                <Box sx = {{ m: '1%', p: '1%',}}>
+                <Box sx = {{ m: '2%', p: '2%',}}>
                     <Typography
                         sx = {{
                             color: '#2196f3',
-                            fontSize: '1.7rem',
+                            fontSize: {
+                                md: '1.7rem',
+                                xs: '1.4rem'
+                            },
                             fontFamily: 'Roboto',
                             letterSpacing: '0.1rem'
                         }}

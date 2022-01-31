@@ -29,12 +29,25 @@ export const nameStyle = {
 
 export const circle = {
     display: 'inline-flex',
-    border: 1,
+    border: {
+        md: 1,
+        xs: 1,
+        sm: 1
+    },
     borderRadius: '50%',
     bgcolor: '#4caf50',
-    width: '1rem',
-    height: '1rem',
-    m: 0.3,
+    width: {
+        md: '1rem',
+        xs: '0.7rem',
+    },
+    height: {
+        md: '1rem',
+        xs: '0.7rem',
+    },
+    m: {
+        md: 0.3,
+        xs: 0.7
+    },
     ml: 1,
     mt: 0.4
 } as const;

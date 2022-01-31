@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TextField, Box } from '@mui/material';
+import { TextField, Box, Input } from '@mui/material';
 import { boxSx, outputSx } from './NotesStyles';
 
 import { getLocalStorageOrDefault } from '../../Func';
@@ -19,13 +19,13 @@ export const Notes = () => {
     return (
         <Box sx = {boxSx}>
             <form onSubmit={(e) => { inputRef.current?.blur(); }}>
-                <TextField
+                <Input
                     sx = {outputSx}
                     value={notes}
                     onChange={onChange}
+                    disableUnderline={true}
                     fullWidth
                     multiline
-                    margin='normal'
                     placeholder='To uncomment highlight the comment along with hash marks'
                 />
             </form>

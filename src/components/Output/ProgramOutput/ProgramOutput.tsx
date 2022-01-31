@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Box, Typography } from '@mui/material';
-import { boxSx, outputSx } from './ProgramOutputStyles';
+import { boxSx, outputSx} from './ProgramOutputStyles';
 
 
 interface props {

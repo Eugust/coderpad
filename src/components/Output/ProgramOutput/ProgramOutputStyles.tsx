@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from '@material-ui/core';
 
 
 export const boxSx = {
@@ -10,7 +10,10 @@ export const boxSx = {
 
 export const outputSx = {
     color: '#fafafa',
-    fontSize: '1.7rem',
+    fontSize: {
+        md: '1.7rem',
+        xs: '1.4rem'
+    },
     fontFamily: 'Roboto',
     letterSpacing: '0.1rem'
 } as const;
