@@ -30,10 +30,10 @@ interface props {
 const Check = (code: string | null) => {
     if (code) {
         let codeSize = new Blob([code]).size
-        if (codeSize <= 1024) {
-            return "Passed"
+        if (codeSize < 1024) {
+            return "Ok"
         }
-        return "Too big code!"
+        return "Error(Too big code!)"
     }
     return "Please, input your code"
 }
